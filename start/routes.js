@@ -21,4 +21,5 @@ Route.on('/').render('welcome');
 Route.get('users', 'UserController.index').as('users');
 Route.get('user/:id', 'UserController.show');
 Route.get('users/create', 'UserController.create');
+Route.get('users/:id/update', 'UserController.edit');
 Route.get('users/:id/delete', 'UserController.destroy');

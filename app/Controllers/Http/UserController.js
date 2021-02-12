@@ -23,6 +23,14 @@ class UserController {
     ctx.response.route('users');
   }
 
+  async edit(ctx) {
+    const user = await User.find(ctx.params.id);
+    const time = new Date().getTime();
+    user.username = `GDS_new_${time}`;
+    await user.save();
+    ctx.response.route('users');
+  }
+
   async destroy(ctx) {
     const user = await User.find(ctx.params.id);
     await user.delete();
