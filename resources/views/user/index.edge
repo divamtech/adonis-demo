@@ -1,0 +1,12 @@
+
+<div class="subtitle">
+  <img src="/pyramid.png">
+  This is users index page.
+  
+  <a href="/users/create">Create new users</a>
+  <ol>
+  @each(user in users)
+    <li> <a href="/user/{{user.id}}">{{ user.username }} and his email id is {{user.email}} </a></li>
+  @endeach
+</ol>
+</div>
